@@ -3,13 +3,6 @@
 pipeline {
     agent any
 
-    options {
-        ansiColor('xterm')
-        buildDiscarder(logRotator(numToKeepStr: '10'))
-        disableConcurrentBuilds(abortPrevious: true)
-        disableResume()
-    }
-
     stages {
         stage("Drop parameters to a file") {
             steps {

@@ -1,7 +1,6 @@
 // parameterized build example for readFromPropertiesFile groovy example
 
-pipeline {
-    
+pipeline {    
     agent any
     
     parameters {
@@ -10,6 +9,7 @@ pipeline {
         string(name: "BLAH3", defaultValue: "NOT_VALID", trim: true, description: "BLAH3 Value")
         string(name: "BLAH4", defaultValue: "NOT_VALID", trim: true, description: "BLAH4 Value")
     }
+
     stages {
         stage("Build") {
             steps {

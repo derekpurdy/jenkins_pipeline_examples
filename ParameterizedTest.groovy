@@ -6,7 +6,7 @@ pipeline {
     parameters {
         string(name: "BLAH1", defaultValue: "NOT_VALID", trim: true, description: "BLAH1 Value")
         string(name: "BLAH2", defaultValue: "NOT_VALID", trim: true, description: "BLAH2 Value")
-        choice(name: 'BLAH3', choices: ['NOT_VALID', 'VALID'], description: 'BLAH5 Value') 
+        choice(name: 'BLAH3', choices: ['NOT_VALID', 'VALID'], description: 'BLAH3 Value') 
     }
 
     stages {

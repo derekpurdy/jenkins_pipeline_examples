@@ -8,6 +8,7 @@ pipeline {
             steps {
                 sh(script: "echo 'BLAH1=BLAH1' > ${WORKSPACE}/test.vars")
                 sh(script: "echo 'BLAH2=BLAH2' >> ${WORKSPACE}/test.vars")
+                sh(script: "echo 'BLAH3=VALID' >> ${WORKSPACE}/test.vars")
             }
         }
         stage("Read from a Properties file") {

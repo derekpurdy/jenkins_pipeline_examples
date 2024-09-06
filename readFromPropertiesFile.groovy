@@ -17,7 +17,7 @@ pipeline {
                 sh(script: "echo 'BLAH2=BLAH2' >> ${WORKSPACE}/test.vars")
             }
         }
-        stage("Read from file") {
+        stage("Read from a Properties file") {
             steps{
                 script {
                     def propertiesFile = "${WORKSPACE}/test.vars"

@@ -1,7 +1,9 @@
 // parameterized build example for readFromPropertiesFile groovy example
 
 pipeline {
+    
     agent any
+    
     parameters {
         string(name: "BLAH1", defaultValue: "NOT_VALID", trim: true, description: "BLAH1 Value")
         string(name: "BLAH2", defaultValue: "NOT_VALID", trim: true, description: "BLAH2 Value")

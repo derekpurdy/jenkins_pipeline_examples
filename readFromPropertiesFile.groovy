@@ -14,18 +14,18 @@ pipeline {
         stage("Read from a Properties file") {
             steps{
                 script {
-                    def propertiesFile = "${WORKSPACE}/test.vars"
-                    if (fileExists(propertiesFile)) {
-                        def parameterProperties = readProperties(file: propertiesFile)
-                        def params = parameterProperties.collect { key, value ->
+                    def PROPERTIES_FILE = "${WORKSPACE}/test.vars"
+                    if (fileExists(PROPERTIES_FILE)) {
+                        def PARAMETER_PROPERTIES = readProperties(file: PROPERTIES_FILE)
+                        def PARAMS = PARAMETER_PROPERTIES.collect { key, value ->
                             string(name: key, value: value)
                         }
                         build job: 'Parameterizedtest',
-                            parameters: params,
+                            parameters: PARAMS,
                             propagate: true,
                             wait: true
                     } else {
-                        error "Properties file does not exist: ${propertiesFile}"
+                        error "Properties file does not exist: ${PROPERTIES_FILE}"
                     }
                 }
             }
